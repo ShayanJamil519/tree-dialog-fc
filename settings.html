@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vertical Tabs with Profile Settings Page</title>
+    <!-- Bootstrap 5 CSS -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/css/bootstrap.min.css"
+    /> -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="css/style.css?v=1.4" />
+    <script defer src="./js/Setting.js"></script>
+
+    <link rel="stylesheet" href="css/Setting.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="navbar-brand d-flex align-items-center">
+          <img src="img/logo.svg" alt="Tree Dialog Logo" />
+          <a href="index.html">Tree<span class="text-primary">Dialog</span></a>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse gap-4 justify-content-between"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav gap-4 align-items-center">
+            <li class="nav-item">
+              <a class="nav-link" href="articles.html">Articles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="articles.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="articles.html">Stories</a>
+            </li>
+          </ul>
+          <div
+            class="d-flex flex-column flex-lg-row align-items-center gap-3 mt-3 mt-lg-0"
+          >
+            <button class="btn btn-primary">Post Article</button>
+            <button class="btn" onclick="location.href='login.html'">
+              Log In
+            </button>
+            <button class="btn">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Settings Section -->
+
+    <div class="bg-light settings__container">
+      <div class="container py-3 pb-5">
+        <div class="row min-vh-100">
+          <div class="col-md-3 col-sm-12">
+            <!-- Vertical tabs -->
+            <ul
+              style="flex-wrap: nowrap"
+              class="w-sm-100 nav flex-sm-row overflow-sm-x-scroll flex-md-column"
+              id="myTab"
+              role="tablist"
+            >
+              <!-- ============================================ -->
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link active"
+                  id="profile-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#profile"
+                  type="button"
+                  role="tab"
+                  aria-controls="profile"
+                  aria-selected="true"
+                  onclick="openTab(event, 'profile')"
+                >
+                  Profile
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="password-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#password"
+                  type="button"
+                  role="tab"
+                  aria-controls="password"
+                  aria-selected="false"
+                  onclick="openTab(event, 'password')"
+                >
+                  Password
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="accountsecurity-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#accountsecurity"
+                  type="button"
+                  role="tab"
+                  aria-controls="accountsecurity"
+                  aria-selected="false"
+                  onclick="openTab(event, 'accountsecurity')"
+                >
+                  Account Security
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="emailandnotification-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#emailandnotification"
+                  type="button"
+                  role="tab"
+                  aria-controls="emailandnotification"
+                  aria-selected="false"
+                  onclick="openTab(event, 'emailandnotification')"
+                >
+                  Email and Notification
+                </button>
+              </li>
+
+              <!-- Language Settings Tab -->
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="languagesettings-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#languagesettings"
+                  type="button"
+                  role="tab"
+                  aria-controls="languagesettings"
+                  aria-selected="false"
+                  onclick="openTab(event, 'languagesettings')"
+                >
+                  Language Settings
+                </button>
+              </li>
+
+              <!-- Photo Tab -->
+
+              <li class="nav-item" role="presentation">
+                <button
+                  class="nav-link"
+                  id="photo-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#photo"
+                  type="button"
+                  role="tab"
+                  aria-controls="photo"
+                  aria-selected="false"
+                  onclick="openTab(event, 'photo')"
+                >
+                  Photo
+                </button>
+              </li>
+
+              <!-- ============================================= -->
+            </ul>
+          </div>
+          <div class="col-md-9 col-sm-12 bg-white p-0">
+            <div id="myTabContent">
+              <div
+                class="tab-pane show active fade"
+                id="profile"
+                role="tabpanel"
+                aria-labelledby="profile-tab"
+              >
+                <div class="profile-settings">
+                  <div class="border-bottom">
+                    <h4 class="py-3 px-4 mb-0">Profile Details</h4>
+                  </div>
+                  <form>
+                    <!-- Name Container -->
+                    <div class="px-4 pt-4 pb-5 border-bottom">
+                      <h5 class="font-weight mb-3">Name</h5>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label for="firstname" class="form-label"
+                            >First Name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control py-2"
+                            id="firstname"
+                            required
+                            placeholder="Enter your first name"
+                          />
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                          <label for="lastname" class="form-label"
+                            >Last Name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control py-2"
+                            id="lastname"
+                            required
+                            placeholder="Enter your last name"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Contact Container -->
+
+                    <div class="px-4 pt-4 pb-5 border-bottom">
+                      <h5 class="font-weight mb-3">Contact</h5>
+                      <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                          <label for="mobilenum" class="form-label"
+                            >Mobile no</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control py-2"
+                            id="mobilenum"
+                            required
+                            placeholder="Enter your mobile number"
+                          />
+                        </div>
+
+                        <div class="col-sm-12 col-md-6">
+                          <label for="landlineno" class="form-label"
+                            >Landline no</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control py-2"
+                            id="landlineno"
+                            required
+                            placeholder="Enter your landline number"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Address Container -->
+
+                    <div class="px-4 pt-4 pb-5 border-bottom">
+                      <h5 class="font-weight mb-3">Address</h5>
+
+                      <div class="row">
+                        <div class="col-12">
+                          <label for="address" class="form-label"
+                            >Address</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control py-2"
+                            id="address"
+                            required
+                            placeholder="Enter your address"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mt-4">
+                        <div class="col-12">
+                          <input
+                            type="text"
+                            class="form-control py-2"
+                            id="address1"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="row mt-4">
+                        <div class="col-12">
+                          <label for="address" class="form-label"
+                            >City / Town</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control py-2"
+                            id="city"
+                            required
+                            placeholder="Enter your City / Town"
+                          />
+                        </div>
+                      </div>
+
+                      <!-- First Container -->
+                      <div class="mt-4">
+                        <div class="row">
+                          <div class="col-sm-12 col-md-6">
+                            <label for="zipcode" class="form-label"
+                              >Zip / Postal Code</label
+                            >
+                            <input
+                              type="number"
+                              class="form-control py-2"
+                              id="zipcode"
+                              required
+                              placeholder="Enter your ZIP / Postal Code"
+                            />
+                          </div>
+
+                          <div class="col-sm-12 col-md-6">
+                            <label for="state" class="form-label"
+                              >State / Region</label
+                            >
+                            <input
+                              type="text"
+                              class="form-control py-2"
+                              id="state"
+                              required
+                              placeholder="Enter your State / Region"
+                            />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row mt-4">
+                        <label for="company" class="form-label">Country</label>
+                        <select
+                          style="width: 97%"
+                          class="form-select mx-auto"
+                          aria-label="Select your country"
+                        >
+                          <option selected>Select your country</option>
+                          <option value="1">India</option>
+                          <option value="2">Japan</option>
+                          <option value="3">Africa</option>
+                        </select>
+                      </div>
+
+                      <div class="row mt-4">
+                        <div class="col-12">
+                          <label for="company" class="form-label"
+                            >Company</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control py-2"
+                            id="company"
+                            required
+                            placeholder="Enter your company name"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div
+                      class="mt-3"
+                      style="margin-left: 20px; margin-bottom: 20px"
+                    >
+                      <button type="submit" class="px-4 btn btn-primary">
+                        Save Settings
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- ===========PASSWORD DETAILS ========== -->
+
+              <div
+                class="tab-pane fade"
+                id="password"
+                role="tabpanel"
+                aria-labelledby="password-tab"
+              >
+                <div class="border-bottom">
+                  <h4 class="py-3 px-4 mb-0">Password</h4>
+                </div>
+
+                <form>
+                  <div class="px-4 pt-4 pb-5 border-bottom">
+                    <h5 class="font-weight mb-3">Change Password</h5>
+                    <div class="row mb-3">
+                      <div class="col-sm-12 col-md-6">
+                        <label for="firstname" class="form-label"
+                          >Current Password</label
+                        >
+                        <div class="input-group">
+                          <input
+                            type="password"
+                            class="form-control py-2"
+                            id="currentpassword"
+                            required
+                          />
+                          <button
+                            class="btn btn-dark"
+                            type="button"
+                            id="password-toggle1"
+                            onclick="togglePasswordVisibility1()"
+                          >
+                            <i class="bi bi-eye-fill"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col-sm-12 col-md-6">
+                        <label for="newpassword" class="form-label"
+                          >New Password</label
+                        >
+                        <div class="input-group">
+                          <input
+                            type="password"
+                            class="form-control py-2"
+                            id="newpassword"
+                            required
+                          />
+                          <button
+                            class="btn btn-dark"
+                            type="button"
+                            id="password-toggle2"
+                            onclick="togglePasswordVisibility2()"
+                          >
+                            <i class="bi bi-eye-fill"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col-sm-12 col-md-6">
+                        <label for="confirmpassword" class="form-label"
+                          >Confirm Password</label
+                        >
+                        <div class="input-group">
+                          <input
+                            type="password"
+                            class="form-control py-2"
+                            id="confirmpassword"
+                            required
+                          />
+                          <button
+                            class="btn btn-dark"
+                            type="button"
+                            id="password-toggle3"
+                            onclick="togglePasswordVisibility3()"
+                          >
+                            <i class="bi bi-eye-fill"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-3"
+                    style="margin-left: 20px; margin-bottom: 20px"
+                  >
+                    <button type="submit" class="px-4 btn btn-primary">
+                      Save Settings
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- ===========ACCOUNT SECURITY ========== -->
+
+              <div
+                class="tab-pane fade"
+                id="accountsecurity"
+                role="tabpanel"
+                aria-labelledby="accountsecurity-tab"
+              >
+                <div class="border-bottom">
+                  <h4 class="py-3 px-4 mb-0">Account Security</h4>
+                </div>
+                <div class="px-4">
+                  <h5 class="mt-4 mb-3 font-bold">Two-Factor Authentication</h5>
+                  <p style="font-size: 14px">
+                    Your account does not have two-factor authentication turned
+                    on.
+                  </p>
+
+                  <p style="font-size: 14px">
+                    Two-factor authentication ensures that only devices you
+                    trust are able to access your Freelancer.com account.
+                    Whenever a new device attempts to login to your account, you
+                    will be required to confirm the login by using a code sent
+                    to your email address or phone number.
+                  </p>
+                  <div class="mt-4 d-flex justify-content-between">
+                    <a href="#" class="text-decoration-none">Learn more</a>
+                    <button type="submit" class="px-4 btn btn-primary">
+                      Get Started
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- =========== Email and Notification========== -->
+
+              <div
+                class="tab-pane fade"
+                id="emailandnotification"
+                role="tabpanel"
+                aria-labelledby="emailandnotification-tab"
+              >
+                <div class="mb-4 border-bottom">
+                  <div class="border-bottom">
+                    <h4 class="py-3 px-4 mb-0">Email and Notifications</h4>
+                  </div>
+                  <div class="row mt-4 px-4">
+                    <h5>Email</h5>
+                    <div class="row mt-4">
+                      <div class="col-md-6 col-sm-12">
+                        <label for="company" class="form-label">Email</label>
+                        <input
+                          type="email"
+                          class="form-control py-2"
+                          id="email"
+                          required
+                          placeholder="Enter your email"
+                        />
+                      </div>
+                      <div class="col-sm-12 col-md-6">
+                        <label for="password" class="form-label"
+                          >Password</label
+                        >
+                        <div class="input-group">
+                          <input
+                            type="password"
+                            class="form-control py-2"
+                            id="password"
+                            required
+                          />
+                          <button
+                            class="btn btn-dark"
+                            type="button"
+                            id="password-toggle4"
+                            onclick="togglePasswordVisibility4()"
+                          >
+                            <i class="bi bi-eye-fill"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    class="mt-4"
+                    style="margin-bottom: 20px; margin-left: 20px"
+                  >
+                    <button
+                      type="submit"
+                      class="font-bold px-3 btn btn-light border"
+                    >
+                      Update email address
+                    </button>
+                  </div>
+                </div>
+                <div class="mt-4 px-4">
+                  <h5 class="font-bold mb-3">
+                    Digest emails for your posted projects
+                  </h5>
+                  <div class="col-md-6 col-sm-12 form-check form-switch">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="flexSwitchCheckChecked"
+                      checked
+                    />
+                    <label
+                      class="font-bold form-check-label"
+                      for="flexSwitchCheckChecked"
+                      >When a bid is placed / updated / retracted on your
+                      project</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- =========== Language Settings ========== -->
+
+              <div
+                class="tab-pane fade"
+                id="languagesettings"
+                role="tabpanel"
+                aria-labelledby="languagesettings-tab"
+              >
+                <div class="border-bottom">
+                  <h4 class="py-3 px-4 mb-0">Language Settings</h4>
+                </div>
+
+                <div class="row mt-4 px-4">
+                  <label for="language" class="form-label"
+                    >I want to browse the website in</label
+                  >
+                  <div class="col-md-7 col-sm-12">
+                    <select class="form-select mx-auto">
+                      <option selected>English</option>
+                      <option value="1">French</option>
+                      <option value="2">Chineese</option>
+                      <option value="3">African</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="px-4 mt-4">
+                  <div>
+                    <label for="browselanguage" class="form-label"
+                      >I want to browse projects in the following
+                      languages:</label
+                    >
+                  </div>
+
+                  <div
+                    style="min-height: 100px"
+                    class="border-1 border col-md-7 col-sm-12 px-2 py-2 border-bottom"
+                  >
+                    <span
+                      class="me-3 badge bg-light rounded-pill text-black px-3 py-2"
+                    >
+                      Hindi
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="badge"
+                        aria-label="Close"
+                      ></button>
+                    </span>
+                    <span
+                      class="me-3 badge bg-light rounded-pill text-black px-3 py-2"
+                    >
+                      Italiano
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="badge"
+                        aria-label="Close"
+                      ></button>
+                    </span>
+                    <span
+                      class="me-3 badge bg-light rounded-pill text-black px-3 py-2"
+                    >
+                      Espanol
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="badge"
+                        aria-label="Close"
+                      ></button>
+                    </span>
+                    <span
+                      class="badge bg-light rounded-pill text-black px-3 py-2"
+                    >
+                      French
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="badge"
+                        aria-label="Close"
+                      ></button>
+                    </span>
+                  </div>
+                  <div class="mt-3" style="margin-bottom: 20px">
+                    <button type="submit" class="px-4 btn btn-primary">
+                      Save Settings
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- =========== Photo Settings ========== -->
+
+              <div
+                class="tab-pane fade"
+                id="photo"
+                role="tabpanel"
+                aria-labelledby="photo-tab"
+              >
+                <h2>Photo</h2>
+                <p>Welcome to the photo!</p>
+
+                <div class="row">
+                  <div class="col-md-6">
+                    <img
+                      src="your_image_url"
+                      class="img-fluid"
+                      alt="Your Image"
+                    />
+                  </div>
+                  <div class="col-md-6">
+                    <button class="btn btn-primary" id="edit-image">
+                      Edit Image
+                    </button>
+                  </div>
+                </div>
+
+                <!-- ======================== -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

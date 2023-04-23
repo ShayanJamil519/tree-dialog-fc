@@ -1,0 +1,58 @@
+/* Custom styles for the tabs and the profile settings page */
+
+.settings__container .nav-link {
+  border-radius: 0 !important;
+  color: black;
+  font-size: 14px;
+  padding: 15px 20px;
+  background: none !important;
+}
+.settings__container .nav-link.active {
+  color: #007bff !important;
+  border-left: 4px solid #007bff !important;
+}
+.settings__container .nav-link:hover {
+  color: black !important;
+  border-left: 4px solid #cecece !important;
+}
+.settings__container .tab-content {
+  width: calc(100% - 230px);
+}
+
+.settings__container label {
+  font-weight: 600;
+  font-size: 12px;
+}
+.settings__container .form-control:focus,
+.settings__container select:focus {
+  border-color: #007bff;
+  border-width: 1px;
+  box-shadow: none;
+}
+.settings__container .form-control,
+.settings__container select:focus,
+.settings__container option:focus {
+  font-size: 14px !important;
+}
+
+@media (max-width: 576px) {
+  .settings__container ul {
+    overflow: scroll;
+    /* white-space: nowrap; */
+  }
+  .settings__container .nav-link {
+    font-size: 14px;
+    padding: 10px 5px;
+    white-space: nowrap;
+    margin: 0px 8px;
+    margin-bottom: 10px;
+  }
+  .settings__container .nav-link.active {
+    border-bottom: 2px solid #007bff !important;
+    border-left: none !important;
+  }
+  .settings__container .nav-link:hover {
+    border-bottom: 2px solid #cecece !important;
+    border-left: none !important;
+  }
+}

@@ -1,0 +1,90 @@
+body {
+	padding-top: 40px;
+	padding-bottom: 40px;
+	background-color: #eee;
+}
+
+.cntn-signin-v2 {
+	background-color: #ffffff;
+	width: 80%;
+	border-radius: 10px;
+}
+
+.bg-ov {
+	padding: 0;
+}
+
+/* Hero Image */
+.bg-overlay {
+    background: linear-gradient(rgba(0,113,188,.90), rgba(0,113,188,.80)), url("https://images.unsplash.com/photo-1602825398850-714a149a7d04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    height: 591px;
+    width: 100%;
+    padding-top: 80px;
+}
+
+.cnt-login-sm {
+	width: 78%;
+	margin: 0 auto;
+	border: 1px solid #dddddd;
+	text-align: center;
+	border-radius: 5px;
+
+}
+
+
+
+.cnt-login-sm .social {
+	margin: 20px;
+	width: 30px;
+}
+
+.form-signin {
+	max-width: 400px;
+	padding: 15px;
+	margin: 0 auto;
+}
+
+
+.form-signin .input-group {
+	margin-bottom: 15px;
+}
+
+.form-signin .input-group .input-group-text {
+	padding: 6px 16px;
+}
+
+
+.form-signin .form-signin-heading, .form-signin .checkbox {
+	margin-bottom: 10px;
+}
+.form-signin .checkbox {
+	font-weight: normal;
+}
+.form-signin .form-control {
+	position: relative;
+	height: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.px_spacing{
+	padding: 0 12px 0 12px;
+}
+
+@media (max-width: 767.99px) {
+	.cntn-signin-v2 {
+		width: 100%;
+	}
+	
+	body {
+		padding-top: 0px;
+		padding-bottom: 0px;
+	}
+}
