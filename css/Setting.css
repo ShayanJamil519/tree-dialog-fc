@@ -52,6 +52,17 @@
   z-index: 10;
 }
 
+.settings__container .camera__responsive {
+  position: relative;
+}
+.settings__container .camera__responsive i {
+  font-size: 50px;
+  position: absolute;
+  cursor: pointer;
+  top: 0%;
+  right: 20%;
+}
+
 @media (max-width: 760px) {
   .settings__container .responsive__class {
     min-height: unset !important;
@@ -81,8 +92,7 @@
     border-left: none !important;
     color: #007bff !important;
   }
-  /* .settings__container .nav-link:hover {
-    border-bottom: 2px solid #cecece !important;
-    border-left: none !important;
-  } */
+  .settings__container .camera__responsive i {
+    right: 10%;
+  }
 }
