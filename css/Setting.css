@@ -17,9 +17,9 @@
   border-left: none !important;
   border-left: 4px solid #cecece !important;
 }
-.settings__container .responsive__class {
+/* .settings__container .responsive__class {
   min-height: 100vh !important;
-}
+} */
 .settings__container .tab-content {
   width: calc(100% - 230px);
 }
@@ -64,9 +64,9 @@
 }
 
 @media (max-width: 760px) {
-  .settings__container .responsive__class {
+  /* .settings__container .responsive__class {
     min-height: unset !important;
-  }
+  } */
 
   .settings__container ul {
     /* overflow: scroll; */
