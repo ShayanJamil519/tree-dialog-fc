@@ -38,7 +38,17 @@
   font-size: 14px !important;
 }
 
-@media (max-width: 576px) {
+.settings__container .btn__responsive {
+  position: relative;
+}
+.settings__container .btn__responsive button {
+  position: absolute;
+  right: 5px;
+  outline: none;
+  border: none;
+}
+
+@media (max-width: 660px) {
   .settings__container .responsive__class {
     min-height: unset !important;
   }
