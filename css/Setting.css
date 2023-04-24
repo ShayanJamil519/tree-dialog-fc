@@ -15,6 +15,9 @@
   color: black !important;
   border-left: 4px solid #cecece !important;
 }
+.settings__container .responsive__class {
+  min-height: 100vh !important;
+}
 .settings__container .tab-content {
   width: calc(100% - 230px);
 }
@@ -36,10 +39,22 @@
 }
 
 @media (max-width: 576px) {
-  .settings__container ul {
-    overflow: scroll;
-    /* white-space: nowrap; */
+  .settings__container .responsive__class {
+    min-height: unset !important;
   }
+
+  .settings__container ul {
+    /* overflow: scroll; */
+    overflow-x: auto;
+    /* white-space: nowrap; */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .settings__container ul::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+
   .settings__container .nav-link {
     font-size: 14px;
     padding: 10px 5px;
@@ -50,9 +65,10 @@
   .settings__container .nav-link.active {
     border-bottom: 2px solid #007bff !important;
     border-left: none !important;
+    color: #007bff !important;
   }
-  .settings__container .nav-link:hover {
+  /* .settings__container .nav-link:hover {
     border-bottom: 2px solid #cecece !important;
     border-left: none !important;
-  }
+  } */
 }
