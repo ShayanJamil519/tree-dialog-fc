@@ -48,7 +48,7 @@
   border: none;
 }
 
-@media (max-width: 660px) {
+@media (max-width: 760px) {
   .settings__container .responsive__class {
     min-height: unset !important;
   }
