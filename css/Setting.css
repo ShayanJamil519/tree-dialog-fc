@@ -24,7 +24,7 @@
 
 .settings__container label {
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
 }
 .settings__container .form-control:focus,
 .settings__container select:focus {
@@ -46,6 +46,8 @@
   right: 5px;
   outline: none;
   border: none;
+  display: block;
+  z-index: 10;
 }
 
 @media (max-width: 760px) {

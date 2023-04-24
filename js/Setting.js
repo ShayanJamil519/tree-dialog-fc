@@ -71,18 +71,19 @@ function togglePasswordVisibility3() {
     passwordToggle.innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
   } else {
     passwordField.type = "password";
-    passwordToggle.innerHTML = '   <i class="bi bi-eye-fill"></i>';
+    passwordToggle.innerHTML = '<i class="bi bi-eye-fill"></i>';
   }
 }
+
 function togglePasswordVisibility4() {
-  var passwordField = document.getElementById("password");
+  var passwordField = document.getElementById("password4");
   var passwordToggle = document.getElementById("password-toggle4");
   if (passwordField.type === "password") {
     passwordField.type = "text";
     passwordToggle.innerHTML = '<i class="bi bi-eye-slash-fill"></i>';
   } else {
     passwordField.type = "password";
-    passwordToggle.innerHTML = '   <i class="bi bi-eye-fill"></i>';
+    passwordToggle.innerHTML = '<i class="bi bi-eye-fill"></i>';
   }
 }
 
