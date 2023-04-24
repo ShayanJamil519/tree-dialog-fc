@@ -10,10 +10,11 @@
 }
 .settings__container .nav-link.active {
   color: #007bff !important;
+  font-weight: bold;
+  font-size: 13px;
   border-left: 4px solid #007bff !important;
 }
 .settings__container .nav-link:hover {
-  color: black !important;
   border-left: none !important;
   border-left: 4px solid #cecece !important;
 }
@@ -27,6 +28,11 @@
 .settings__container label {
   font-weight: 600;
   font-size: 14px;
+}
+
+.settings__container .label__heading {
+  font-size: 20px;
+  font-family: sans-serif;
 }
 .settings__container .form-control:focus,
 .settings__container select:focus {
