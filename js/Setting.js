@@ -1,5 +1,4 @@
 function openTab(evt, tabName) {
-  console.log("call : ", tabName);
   // Get all the tab content divs
   var tabcontent = document.getElementsByClassName("tab-pane");
 
